@@ -1,12 +1,9 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
         out = "1" 
-        if n == 1:
-            return out
-
-        for i in range(n):
+        for i in range(n-1):
             out = self.rec_rle(out)
-            print("out is: ", out)
+        return out
 
     def rec_rle(self, input):
         if len(input) == 0:
@@ -26,4 +23,6 @@ class Solution:
                     
 
 S = Solution()
-S.countAndSay(4)
+print(S.countAndSay(4))
+print("****")
+print(S.countAndSay(1))
